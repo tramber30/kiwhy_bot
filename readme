@@ -1,0 +1,17 @@
+kiwhy_bot version 0.1
+
+Notification bot for discord, use a "notifications" text channel to 
+send status message about your guild (server) members.
+
+# Credentials.json contains your bot-token like this:
+        {
+                "bot-token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+
+# Bot needs messages permissions and a text channel named "notifications"
+# Commands
+        !history: return the number of autor's mentions in the current channel
+        !clean: delete message in notification channel
+
+# Require discord.py rewrite version
+        python3 -m pip install -U https://github.com/Rapptz/discord.py/archive/rewrite.zip#egg=discord.py
