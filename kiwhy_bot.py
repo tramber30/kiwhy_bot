@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
  Copyright (C) 2019  Nicolas Bertrand
 
@@ -20,6 +21,8 @@ import asyncio
 import json 
 import time
 import datetime
+
+__version__ = "0.1"
 
 class KiwhyClient(discord.Client):
     async def on_ready(self):
@@ -43,7 +46,8 @@ class KiwhyClient(discord.Client):
                 await message.channel.purge(limit=100)
             else:
                 await message.channel.send("command only available in notifications chan")
-
+        elif message.content.startswith("!version"):
+            await message.channel.send('kiwhy_bot version: {}'.format(__version__))
     async def on_member_update(self, before, current):
         if current.status == discord.Status.online and (before.status == discord.Status.offline or before.status == discord.Status.invisible):
             print("member [%s] is now online" % current)
